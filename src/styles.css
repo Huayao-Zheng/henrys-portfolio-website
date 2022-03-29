@@ -562,8 +562,132 @@ img {
 }
 
 /*=============== WORK ===============*/
+.work__container {
+  padding-top: 1rem;
+}
+
+.work__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.work__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+}
+
+.work__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.work__img {
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.work__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 0.25rem;
+}
+
+.work__button {
+  width: max-content;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.work__button:hover .work__icon {
+  transform: translateX(0.25rem);
+}
+
+.work__icon {
+  font-size: 1rem;
+  transition: 0.4s;
+}
 
 /* Active item work*/
+.active-work {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+/* 
+      <section class="work section" id="work">
+        <span class="section__subtitle">My Portfolio</span>
+        <h2 class="section__title">Recent Works</h2>
+
+        <div class="work__filters">
+          <span class="work__item">All</span>
+          <span class="work__item">Web</span>
+          <span class="work__item">Movil</span>
+          <span class="work__item">Design</span>
+        </div>
+
+        <div class="work__container container grid">
+          <div class="work__card">
+            <img src="./src/img/work1.jpg" alt="" class="work__img" />
+
+            <h3 class="work__title">Web design</h3>
+
+            <a href="#" class="work__button">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+          </div>
+
+          <div class="work__card">
+            <img src="./src/img/work2.jpg" alt="" class="work__img" />
+
+            <h3 class="work__title">App movil</h3>
+
+            <a href="#" class="work__button">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+          </div>
+
+          <div class="work__card">
+            <img src="./src/img/work3.jpg" alt="" class="work__img" />
+
+            <h3 class="work__title">Brand design</h3>
+
+            <a href="#" class="work__button">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+          </div>
+
+          <div class="work__card">
+            <img src="./src/img/work4.jpg" alt="" class="work__img" />
+
+            <h3 class="work__title">Web design</h3>
+
+            <a href="#" class="work__button">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+          </div>
+
+          <div class="work__card">
+            <img src="./src/img/work5.jpg" alt="" class="work__img" />
+
+            <h3 class="work__title">App movil</h3>
+
+            <a href="#" class="work__button">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+*/
 
 /*=============== TESTIMONIAL ===============*/
 
