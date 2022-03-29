@@ -3,23 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!--=============== FAVICON ===============-->
     <link rel="icon" href="./src/img/favicon.png" />
-
     <!--=============== BOXICONS ===============-->
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="" />
-
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./src/styles.css" />
 
-    <title>Henry's portfolio website'</title>
+    <title>Portfolio website'</title>
   </head>
   <body>
     <!--=============== HEADER ===============-->
@@ -537,7 +536,46 @@
       </section>
 
       <!--=============== TESTIMONIALS ===============-->
-      <section class="testimonial section"></section>
+      <section class="testimonial section">
+        <span class="section__subtitle">My clients say</span>
+        <h2 class="section__title">Testimonial</h2>
+
+        <div class="testimonial__container container swiper">
+          <div class="swiper-wrapper">
+            <div class="testimonial__card swiper-slide">
+              <img src="./src/img/testimonial1.png" class="testimonial__img" />
+
+              <h3 class="testimonial__name">Jhon Doe</h3>
+              <p class="testimonial__description">
+                A really good job, all aspects of the project were followed step
+                by step and with good results.
+              </p>
+            </div>
+
+            <div class="testimonial__card swiper-slide">
+              <img src="./src/img/testimonial2.png" class="testimonial__img" />
+
+              <h3 class="testimonial__name">Paula Vusy</h3>
+              <p class="testimonial__description">
+                A really good job, all aspects of the project were followed step
+                by step and with good results.
+              </p>
+            </div>
+
+            <div class="testimonial__card swiper-slide">
+              <img src="./src/img/testimonial3.png" class="testimonial__img" />
+
+              <h3 class="testimonial__name">Sara Cill</h3>
+              <p class="testimonial__description">
+                A really good job, all aspects of the project were followed step
+                by step and with good results.
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
 
       <!--=============== CONTACT ===============-->
       <section class="contact section" id="contact"></section>
@@ -549,11 +587,11 @@
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
 
-    <!--=============== SWIPER JS ===============-->
-    <script src=""></script>
-
     <!--=============== MIXITUP FILTER ===============-->
     <script src="./src/js/mixitup.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="./src/js/main.js"></script>
