@@ -63,3 +63,27 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
         },
     },
 });
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]');
+
+function scrollActive() {
+    const scrollY = window.scrollY;
+
+    sections.forEach((current) => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 58;
+        const hasEntered = scrollY > sectionTop;
+        const hasNotLeft = scrollY <= sectionTop + sectionHeight;
+        const sectionId = current.getAttribute('id');
+        const currentNavLink = document.querySelector(`.nav__menu a[href='#${sectionId}']`);
+
+        if (hasEntered && hasNotLeft) {
+            currentNavLink.classList.add('active-link');
+        } else {
+            currentNavLink.classList.remove('active-link');
+        }
+    });
+}
+
+window.addEventListener('scroll', scrollActive);
