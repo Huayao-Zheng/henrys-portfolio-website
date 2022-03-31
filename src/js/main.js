@@ -9,19 +9,26 @@ window.addEventListener('scroll', scrollHeader);
 
 /*=============== SERVICES MODAL ===============*/
 const modalViews = document.querySelectorAll('.services__modal');
-const modalButtons = document.querySelectorAll('.services__button');
+const modalOpenButtons = document.querySelectorAll('.services__button');
 const modalCloseButtons = document.querySelectorAll('.services__modal--close');
 
-function modal(modalClick) {
-    modalViews[modalClick].classList.toggle('active-modal');
+function openModal(modalClick) {
+    modalViews[modalClick].classList.add('active-modal');
 }
 
-modalButtons.forEach((mb, i) => {
-    mb.addEventListener('click', () => modal(i));
-});
+function closeModalViews() {
+    modalViews.forEach((mv) => mv.classList.remove('active-modal'));
+}
 
-modalCloseButtons.forEach((mcb, i) => {
-    mcb.addEventListener('click', () => modal(i));
+modalOpenButtons.forEach((mob, i) => mob.addEventListener('click', () => openModal(i)));
+
+modalCloseButtons.forEach((mcb) => mcb.addEventListener('click', closeModalViews));
+
+// close modal when click outside of modal-content
+window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('active-modal')) {
+        closeModalViews();
+    }
 });
 
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
@@ -59,7 +66,7 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
         },
         768: {
             slidesPerView: 2,
-            spaceBetween: 40,
+            spaceBetween: 48,
         },
     },
 });
@@ -87,3 +94,58 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive);
+
+/*=============== DARK LIGHT  THEME ===============*/
+const themeButton = document.getElementById('theme-button');
+const lightTheme = 'light-theme';
+const icon = 'bx-sun';
+
+// localStorage
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+
+//
+const getCurrentTheme = () => (document.body.classList.contains('light-theme') ? 'dark' : 'light');
+const getCurrentIcon = () => (document.body.classList.contains(icon) ? 'bx bx-moon' : 'bx bx-sun');
+
+//
+if (selectedTheme) {
+    // darkTheme is default theme
+    // if its on dark theme, add lightTheme, else remove
+
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](lightTheme);
+    themeButton.classList[selectedTheme === 'bx bx-moon' ? 'add' : 'remove'](icon);
+}
+
+// activate / deactivate theme
+themeButton.addEventListener('click', () => {
+    // theme toggle
+    document.body.classList.toggle(lightTheme);
+    themeButton.classList.toggle(icon);
+    // save the theme and icon to local storage
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+});
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+/*
+ScrollReveal().reveal(target, options);
+*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    cleanup: true,
+});
+
+sr.reveal('.home__data');
+sr.reveal('.home__handle', { delay: 700 });
+sr.reveal('.home__social, .home__scroll', { delay: 900, origin: 'bottom' });
+sr.reveal('.about, .skills, .services, .work, .testimonial, .contact', {
+    delay: 250,
+    origin: 'bottom',
+    afterReveal(elm) {
+        elm.style = '';
+    },
+});
