@@ -300,6 +300,9 @@ body.light-theme {
 }
 
 /*=============== HOME ===============*/
+.home {
+    height: 100vh;
+}
 
 .home__container {
     position: relative;
