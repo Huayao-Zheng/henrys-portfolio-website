@@ -128,9 +128,6 @@ themeButton.addEventListener('click', () => {
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-/*
-ScrollReveal().reveal(target, options);
-*/
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
